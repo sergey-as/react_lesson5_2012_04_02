@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 import {
     BrowserRouter as Router,
@@ -7,7 +7,7 @@ import {
     Link,
     Redirect,
 } from "react-router-dom";
-// import Posts from "./components/Posts/Posts";
+import Posts from "./components/Posts/Posts";
 
 export default function App() {
     return (
@@ -47,29 +47,6 @@ function Home(props) {
     return <h2>Home</h2>;
 }
 
-function Posts(props) {
-    console.log(props);
-    const [posts, setPosts] = React.useState([]);
-
-    const fetchData = async () => {
-        const resp = await fetch('https://jsonplaceholder.typicode.com/posts');
-        const json = await resp.json();
-
-        setPosts(json);
-    }
-
-    React.useEffect(() => {
-        fetchData()
-    }, [])
-
-    return (
-        <div>
-            <ul>
-                {posts.map(el => <li>{el.tittle} - {el.id}</li>)}
-            </ul>
-        </div>
-    );
-}
 
 // export default function App() {
 //     return (

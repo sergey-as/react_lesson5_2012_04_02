@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from "react";
 
-function Posts() {
-    console.log();
+function Posts(props) {
+    console.log(props);
     const [posts, setPosts] = useState([]);
 
     const fetchData = async () => {
